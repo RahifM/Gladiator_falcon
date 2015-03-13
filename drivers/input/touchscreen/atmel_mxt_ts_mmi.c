@@ -1494,7 +1494,7 @@ static void mxt_proc_t100_message(struct mxt_data *data, u8 *message)
 #endif
 
 #ifdef CONFIG_WAKE_GESTURES
-		if (data->suspended) {
+		if (atomic_read(&data->suspended)) {
 		        x += 5000;
 		}
 #endif
@@ -2606,7 +2606,7 @@ struct mxt_data *gl_mxt_data;
 bool scr_suspended(void)
 {
 	struct mxt_data *mxt_data = gl_mxt_data;
-	return mxt_data->suspended;
+	return atomic_read(&mxt_data->suspended);
 }
 
 void set_internal_dt(bool input)
