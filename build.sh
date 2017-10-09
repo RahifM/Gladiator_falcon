@@ -19,8 +19,8 @@
 
 # Modify the following variable if you want to build
 
-export make clean && make mrproper
-export CROSS_COMPILE="/home/rahif/android/kernels/toolchains/uber4.9/bin/arm-eabi-"
+#export make clean && make mrproper
+export CROSS_COMPILE="/home/rahif/android/kernels/toolchains/arm-lin-7/bin/arm-linaro-linux-androideabi-"
 export ARCH=arm
 export SUBARCH=arm
 make falcon_defconfig
